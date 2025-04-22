@@ -1,0 +1,18 @@
+name: "Limit PR commits"
+description: "Limit the number of commits in pull requests"
+inputs:
+  github-token:
+    description: "GitHub token for API requests"
+    required: false
+    default: "${{ github.token }}"
+  pull-request-number:
+    description: "Pull request number"
+    required: false
+    default: "${{ github.event.pull_request.number }}"
+  max-commits:
+    description: "Maximum number of commits per pull request"
+    required: false
+    default: "1"
+runs:
+  using: "node20"
+  main: "dist/index.js"
