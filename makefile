@@ -1,5 +1,5 @@
 build:
-	npx tsc
+	npm run build
 
 start: build
 	node dist/index.js

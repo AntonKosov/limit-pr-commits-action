@@ -2,7 +2,9 @@
     "name": "limit-pr-commits-github-action",
     "version": "1.0.0",
     "main": "src/index.ts",
-    "scripts": {},
+    "scripts": {
+        "build": "ncc build src/index.ts -o dist"
+    },
     "keywords": [],
     "author": "",
     "license": "ISC",
@@ -13,6 +15,7 @@
     },
     "devDependencies": {
         "@types/node": "^22.14.1",
+        "@vercel/ncc": "^0.38.3",
         "typescript": "^5.8.3"
     }
 }
