@@ -29965,7 +29965,7 @@ async function main() {
     const resp = await octokit.rest.pulls.get({ owner: owner, repo: repo, pull_number: pullRequestNumber });
     const actualCommits = resp.data.commits;
     if (actualCommits > maxCommits) {
-        core.setFailed(`The number of commits should not exceed ${maxCommits}. Currently, the pull request has ${actualCommits} commits.`);
+        core.setFailed(`This pull request currently has ${actualCommits} commits, but it should have no more than ${maxCommits}. Please consolidate your commits.`);
     }
 }
 main();
