@@ -1,5 +1,9 @@
 name: "Limit PR commits"
 description: "Limit the number of commits in pull requests"
+author: Anton Kosov
+branding:
+  icon: check-square
+  color: green
 inputs:
   github-token:
     description: "GitHub token for API requests"
