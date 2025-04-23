@@ -29914,7 +29914,25 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 9407:
+/***/ 2929:
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Run = Run;
+async function Run(server) {
+    const maxCommits = server.fetchMaxCommits();
+    const actualCommits = await server.fetchActualCommits();
+    if (actualCommits > maxCommits) {
+        server.reportFailure(`This pull request currently has ${actualCommits} commits, but it should have no more than ${maxCommits}. Please consolidate your commits.`);
+    }
+}
+
+
+/***/ }),
+
+/***/ 3910:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
@@ -29953,22 +29971,27 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.GitHubServer = void 0;
 const core = __importStar(__nccwpck_require__(7484));
 const github = __importStar(__nccwpck_require__(3228));
-async function main() {
-    const token = core.getInput('github-token');
-    const maxCommits = parseInt(core.getInput('max-commits'));
-    const pullRequestNumber = parseInt(core.getInput('pull-request-number'));
-    const owner = process.env.GITHUB_REPOSITORY_OWNER;
-    const repo = process.env.GITHUB_REPOSITORY.split('/')[1];
-    const octokit = github.getOctokit(token);
-    const resp = await octokit.rest.pulls.get({ owner: owner, repo: repo, pull_number: pullRequestNumber });
-    const actualCommits = resp.data.commits;
-    if (actualCommits > maxCommits) {
-        core.setFailed(`This pull request currently has ${actualCommits} commits, but it should have no more than ${maxCommits}. Please consolidate your commits.`);
+class GitHubServer {
+    fetchMaxCommits() {
+        return parseInt(core.getInput('max-commits'));
+    }
+    async fetchActualCommits() {
+        const token = core.getInput('github-token');
+        const pullRequestNumber = parseInt(core.getInput('pull-request-number'));
+        const owner = process.env.GITHUB_REPOSITORY_OWNER;
+        const repo = process.env.GITHUB_REPOSITORY.split('/')[1];
+        const octokit = github.getOctokit(token);
+        const resp = await octokit.rest.pulls.get({ owner: owner, repo: repo, pull_number: pullRequestNumber });
+        return resp.data.commits;
+    }
+    reportFailure(message) {
+        core.setFailed(message);
     }
 }
-main();
+exports.GitHubServer = GitHubServer;
 
 
 /***/ }),
@@ -31884,12 +31907,20 @@ module.exports = parseParams
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __nccwpck_require__(9407);
-/******/ 	module.exports = __webpack_exports__;
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+var exports = __webpack_exports__;
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const action_1 = __nccwpck_require__(2929);
+const github_server_1 = __nccwpck_require__(3910);
+const server = new github_server_1.GitHubServer();
+(0, action_1.Run)(server);
+
+})();
+
+module.exports = __webpack_exports__;
 /******/ })()
 ;

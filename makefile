@@ -1,5 +1,10 @@
 build:
 	npm run build
 
-start: build
-	node dist/index.js
+.PHONY: lint
+lint:
+	npm run lint
+
+.PHONY: tests
+tests:
+	npm run tests
