@@ -3,7 +3,9 @@
     "version": "1.0.0",
     "main": "src/index.ts",
     "scripts": {
-        "build": "ncc build src/index.ts -o dist"
+        "build": "ncc build src/index.ts -o dist",
+        "lint": "npx eslint .",
+        "tests": "jest"
     },
     "keywords": [],
     "author": "",
@@ -14,8 +16,16 @@
         "@actions/github": "^6.0.0"
     },
     "devDependencies": {
+        "@eslint/js": "^9.25.1",
+        "@types/jest": "^29.5.14",
         "@types/node": "^22.14.1",
+        "@typescript-eslint/eslint-plugin": "^8.31.0",
+        "@typescript-eslint/parser": "^8.31.0",
         "@vercel/ncc": "^0.38.3",
-        "typescript": "^5.8.3"
+        "eslint": "^9.25.1",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.3.2",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.31.0"
     }
 }
