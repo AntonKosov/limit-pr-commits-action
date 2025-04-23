@@ -12,6 +12,6 @@ jobs:
   limit-pr-commits:
     runs-on: ubuntu-latest
     steps:
-      - uses: AntonKosov/limit-pr-commits-action@v1.0.0
+      - uses: AntonKosov/limit-pr-commits-action@v1.0.1
         with:
           max-commits: "1"
