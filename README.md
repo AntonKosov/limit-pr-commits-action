@@ -1,6 +1,7 @@
 # Limit Pull Request Commits
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/AntonKosov/limit-pr-commits-action/blob/master/LICENSE.md)
+[![Tests](https://github.com/AntonKosov/limit-pr-commits-action/actions/workflows/tests.yml/badge.svg)](https://github.com/AntonKosov/limit-pr-commits-action/actions/workflows/tests.yml)
 
 This GitHub Action automatically checks the number of commits in a pull request and fails the check if it exceeds a specified limit.
 
