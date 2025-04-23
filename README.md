@@ -1,5 +1,6 @@
 # Limit Pull Request Commits
 
+[![GitHub Marketplace](https://img.shields.io/github/marketplace/AntonKosov/limit-pr-commits-action.svg?style=flat-square)](https://github.com/marketplace/actions/limit-pr-commits)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/AntonKosov/limit-pr-commits-action/blob/master/LICENSE.md)
 [![Tests](https://github.com/AntonKosov/limit-pr-commits-action/actions/workflows/tests.yaml/badge.svg)](https://github.com/AntonKosov/limit-pr-commits-action/actions/workflows/tests.yaml)
 
