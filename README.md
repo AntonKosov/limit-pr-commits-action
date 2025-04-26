@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/AntonKosov/limit-pr-commits-action/blob/master/LICENSE.md)
 [![Tests](https://github.com/AntonKosov/limit-pr-commits-action/actions/workflows/tests.yaml/badge.svg)](https://github.com/AntonKosov/limit-pr-commits-action/actions/workflows/tests.yaml)
-[![Coverage Status](https://coveralls.io/repos/github/AntonKosov/limit-pr-commits-action/badge.svg)](https://coveralls.io/github/AntonKosov/limit-pr-commits-action)
+[![Coverage Status](https://coveralls.io/repos/github/AntonKosov/limit-pr-commits-action/badge.svg?branch=master)](https://coveralls.io/github/AntonKosov/limit-pr-commits-action?branch=master)
 
 This GitHub Action automatically checks the number of commits in a pull request and fails the check if it exceeds a specified limit.
 
