@@ -1,9 +1,6 @@
 name: Pull Request
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
@@ -12,4 +9,4 @@ jobs:
   limit-pr-commits:
     runs-on: ubuntu-latest
     steps:
-      - uses: AntonKosov/limit-pr-commits-action@v1.0.2
+      - uses: AntonKosov/limit-pr-commits-action@v1.0.3

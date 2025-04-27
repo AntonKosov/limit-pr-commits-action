@@ -28,9 +28,6 @@ To use this action, create a new workflow file (e.g., `.github/workflows/commits
 name: Check Commit Limit
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
