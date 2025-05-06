@@ -25,7 +25,7 @@ This action helps enforce this practice, encouraging developers to squash their 
 To use this action, create a new workflow file (e.g., `.github/workflows/commits-limit.yml`) in your repository with the following content:
 
 ```yaml
-name: Check Commit Limit
+name: Check Commits Limit
 
 on:
   pull_request:
@@ -35,8 +35,10 @@ on:
 jobs:
   check_commits:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
     steps:
-      - name: Check Commit Count
-        uses: AntonKosov/limit-pr-commits-action@v1.0.0
+      - name: Check Commits Count
+        uses: AntonKosov/limit-pr-commits-action@v1.0.5
         with:
           max_commits: 1 # Optional: Set the maximum number of allowed commits (default is 1)

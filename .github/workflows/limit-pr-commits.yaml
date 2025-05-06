@@ -1,4 +1,4 @@
-name: Pull Request
+name: Check Commits Limit
 
 on:
   pull_request:
@@ -6,7 +6,10 @@ on:
       - master
 
 jobs:
-  limit-pr-commits:
+  check_commits:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
     steps:
-      - uses: AntonKosov/limit-pr-commits-action@v1.0.3
+      - name: Check Commits Count
+        uses: AntonKosov/limit-pr-commits-action@v1.0.4
