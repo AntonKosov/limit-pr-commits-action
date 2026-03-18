@@ -1,6 +1,6 @@
-FROM node:20-bookworm
+FROM node:24-bookworm
 
-RUN npm install -g npm@11.3.0
+RUN npm install -g npm@11.11.1
 
 ENV TERM=xterm-256color
 RUN echo "PS1='\e[92m\w\e[0m# '" >> /root/.bashrc

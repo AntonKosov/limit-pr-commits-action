@@ -12,4 +12,4 @@ jobs:
       pull-requests: read
     steps:
       - name: Check Commits Count
-        uses: AntonKosov/limit-pr-commits-action@v1.0.4
+        uses: AntonKosov/limit-pr-commits-action@v1.0.6
