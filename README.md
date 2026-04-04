@@ -39,6 +39,6 @@ jobs:
       pull-requests: read
     steps:
       - name: Check Commits Count
-        uses: AntonKosov/limit-pr-commits-action@v1.0.7
+        uses: AntonKosov/limit-pr-commits-action@v1.0.8
         with:
           max_commits: 1 # Optional: Set the maximum number of allowed commits (default is 1)
